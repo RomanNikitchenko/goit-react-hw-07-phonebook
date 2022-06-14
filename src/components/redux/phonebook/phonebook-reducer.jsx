@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-import actions from './todos-actions';
+import phonebookActions from './phonebook-actions';
 
 const addContact = (state, payload) => {
   const contactsName = state.map(({ name }) => name.toLowerCase());
@@ -13,16 +13,16 @@ const addContact = (state, payload) => {
 };
 
 const items = createReducer([], {
-  [actions.addContact]: (state, { payload }) => {
+  [phonebookActions.addContact]: (state, { payload }) => {
     return addContact(state, payload);
   },
-  [actions.deleteContact]: (state, { payload }) => {
+  [phonebookActions.deleteContact]: (state, { payload }) => {
     return state.filter(contact => contact.id !== payload);
   },
 });
 
 const filter = createReducer('', {
-  [actions.filterChange]: (_, { payload }) => {
+  [phonebookActions.filterChange]: (_, { payload }) => {
     return payload;
   },
 });

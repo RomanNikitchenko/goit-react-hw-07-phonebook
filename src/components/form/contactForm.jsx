@@ -1,4 +1,4 @@
-import todosActions from '../redux/phonebook/todos-actions';
+import todosActions from '../redux/phonebook/phonebook-actions';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 

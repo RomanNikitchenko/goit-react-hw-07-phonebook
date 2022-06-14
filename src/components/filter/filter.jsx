@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import todosActions from '../redux/phonebook/todos-actions';
+import todosActions from '../redux/phonebook/phonebook-actions';
 
 const Filter = () => {
   const value = useSelector(state => state.phonebook.filter);
