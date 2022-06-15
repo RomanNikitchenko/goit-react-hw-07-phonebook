@@ -7,7 +7,7 @@ const store = configureStore({
   reducer: {
     phonebook: phonebookReducer,
   },
-  devTools: process.env.NODE_ENV === 'development', //включение devTools при разработке
+  devTools: process.env.NODE_ENV === 'development', // true //включение devTools при разработке
 });
 
 export default store;
