@@ -4,8 +4,8 @@ import {
   useCreateContactMutation,
 } from '../redux/phonebook/contactSlice';
 
-import ContList from '../contacList/ContList';
-import ContactFor from '../for/ContactFor';
+import ContactList from '../contactList/ContactList';
+import ContactForm from '../form/ContactForm';
 
 const Contacts = () => {
   const { data } = useFetchContactsQuery();
@@ -14,9 +14,9 @@ const Contacts = () => {
 
   return (
     <div>
-      <ContactFor createContact={createContact} />
+      <ContactForm createContact={createContact} />
       {data && (
-        <ContList
+        <ContactList
           contacts={data}
           onDelete={deleteContact}
           deleting={isDeleting}
