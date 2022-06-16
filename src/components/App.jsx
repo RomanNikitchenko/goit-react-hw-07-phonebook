@@ -1,6 +1,7 @@
 import ContactForm from './form/contactForm';
 import Filter from './filter/filter';
 import ContactList from './contactList/contactList';
+import Contacts from './pages/Contacts';
 
 const App = () => {
   //   const [contacts, setContacts] = useState(() => {
@@ -27,6 +28,7 @@ const App = () => {
       <h2>Contacts</h2>
       <Filter />
       <ContactList />
+      <Contacts />
     </div>
   );
 };

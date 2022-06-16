@@ -1,13 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 import phonebookReducer from './phonebook/phonebook-reducer';
+import { contactApi } from './phonebook/contactSlice';
 
 // console.log(process.env.NODE_ENV);
 
 const store = configureStore({
   reducer: {
     phonebook: phonebookReducer,
+    [contactApi.reducerPath]: contactApi.reducer,
   },
   devTools: process.env.NODE_ENV === 'development', // true //включение devTools при разработке
+  middleware: getDefaultMiddleware => [
+    ...getDefaultMiddleware(),
+    contactApi.middleware,
+  ],
 });
 
 export default store;
