@@ -1,4 +1,4 @@
-import ContactListItem from 'components/contactListItem/contactItem';
+import ContactItem from 'components/contactItem/contactItem';
 import { useSelector } from 'react-redux';
 
 const getNormalizedFilter = (filterValue, contacts) => {
@@ -18,7 +18,7 @@ const ContactList = ({ contacts }) => {
   return (
     <ul>
       {visibleFilter.map(({ id, name, phone }) => {
-        return <ContactListItem key={id} id={id} name={name} phone={phone} />;
+        return <ContactItem key={id} id={id} name={name} phone={phone} />;
       })}
     </ul>
   );

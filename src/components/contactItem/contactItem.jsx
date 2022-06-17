@@ -1,6 +1,6 @@
 import { useDeleteContactMutation } from 'components/redux/phonebook/contactSlice';
 
-const ContactListItem = ({ id, name, phone }) => {
+const ContactItem = ({ id, name, phone }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   return (
@@ -15,4 +15,4 @@ const ContactListItem = ({ id, name, phone }) => {
   );
 };
 
-export default ContactListItem;
+export default ContactItem;
