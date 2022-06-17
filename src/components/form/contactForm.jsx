@@ -1,8 +1,21 @@
 import { useState } from 'react';
 
-const ContactFor = ({ createContact }) => {
+const ContactForm = ({ createContact, contacts }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const addContact = (addName, contacts) => {
+    const contactsName = contacts.map(({ name }) => name.toLowerCase());
+
+    if (contactsName.includes(addName.toLowerCase())) {
+      return alert(`${addName} is already in contacts.`);
+    } else {
+      return createContact({
+        name: name,
+        phone: number,
+      });
+    }
+  };
 
   const handleChange = evt => {
     const { name, value } = evt.target;
@@ -23,10 +36,7 @@ const ContactFor = ({ createContact }) => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    createContact({
-      name: name,
-      phone: number,
-    });
+    addContact(name, contacts);
     setName('');
     setNumber('');
   };
@@ -66,4 +76,4 @@ const ContactFor = ({ createContact }) => {
   );
 };
 
-export default ContactFor;
+export default ContactForm;

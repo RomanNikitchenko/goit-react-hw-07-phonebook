@@ -1,21 +1,28 @@
-const ContList = ({ contacts, onDelete, deleting }) => {
+import ContactListItem from '../contactListItem/ContactListItem';
+import { useSelector } from 'react-redux';
+
+const getNormalizedFilter = (filterValue, contacts) => {
+  const normalizedFilter = filterValue.toLowerCase();
+
+  const visibleTodos = contacts.filter(({ name }) => {
+    return name.toLowerCase().includes(normalizedFilter);
+  });
+
+  return visibleTodos;
+};
+
+const ContactList = ({ contacts }) => {
+  const filterValue = useSelector(state => state.phonebook.filter);
+  const visibleFilter = getNormalizedFilter(filterValue, contacts);
+
   return (
     <ul>
       <h1>ContList</h1>
-      {contacts.map(({ id, name, phone }) => {
-        return (
-          <li key={id}>
-            <span>
-              {name}: {phone}
-            </span>
-            <button onClick={() => onDelete(id)}>
-              {deleting ? 'Deleting...' : 'Delete'}
-            </button>
-          </li>
-        );
+      {visibleFilter.map(({ id, name, phone }) => {
+        return <ContactListItem key={id} id={id} name={name} phone={phone} />;
       })}
     </ul>
   );
 };
 
-export default ContList;
+export default ContactList;
