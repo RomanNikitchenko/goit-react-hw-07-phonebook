@@ -1,4 +1,4 @@
-import ContactListItem from 'components/contactListItem/ContactItem';
+import ContactListItem from 'components/contactListItem/ContactListItem';
 import { useSelector } from 'react-redux';
 
 const getNormalizedFilter = (filterValue, contacts) => {
