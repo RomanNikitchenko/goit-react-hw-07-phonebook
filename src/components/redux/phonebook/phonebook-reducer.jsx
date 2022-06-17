@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-import actions from 'components/redux/phonebook/contsacts-actions';
+import actions from 'components/redux/phonebook/contsactsActions';
 
 const filter = createReducer('', {
   [actions.filterChange]: (_, { payload }) => {

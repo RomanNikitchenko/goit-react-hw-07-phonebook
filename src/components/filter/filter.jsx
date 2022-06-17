@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import actions from 'components/redux/phonebook/contsacts-actions';
+import actions from 'components/redux/phonebook/contsactsActions';
 
 const Filter = () => {
   const value = useSelector(state => state.phonebook.filter);
