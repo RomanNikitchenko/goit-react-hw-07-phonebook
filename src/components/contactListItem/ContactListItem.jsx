@@ -2,6 +2,7 @@ import { useDeleteContactMutation } from '../redux/phonebook/contactSlice';
 
 const ContactListItem = ({ id, name, phone }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
+
   return (
     <li key={id}>
       <span>
