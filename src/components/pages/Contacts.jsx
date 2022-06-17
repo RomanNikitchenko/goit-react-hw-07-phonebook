@@ -1,10 +1,10 @@
 import {
   useFetchContactsQuery,
   useCreateContactMutation,
-} from '../redux/phonebook/ContactSlice';
+} from '../redux/phonebook/contactSlice';
 
-import ContactList from '../contactList/ContactList';
-import ContactForm from '../form/ContactForm';
+import ContactList from '../contactList/contactList';
+import ContactForm from '../form/contactForm';
 import Filter from '../filter/filter';
 
 const Contacts = () => {

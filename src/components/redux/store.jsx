@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { contactApi } from './phonebook/ContactSlice';
+import { contactApi } from './phonebook/contactSlice';
 import phonebookReducer from './phonebook/phonebook-reducer';
 
 const store = configureStore({
