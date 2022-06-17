@@ -7,7 +7,7 @@ const store = configureStore({
     phonebook: phonebookReducer,
     [contactApi.reducerPath]: contactApi.reducer,
   },
-  devTools: process.env.NODE_ENV === 'development', // true //включение devTools при разработке
+  devTools: process.env.NODE_ENV === 'development',
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware(),
     contactApi.middleware,

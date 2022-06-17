@@ -1,4 +1,4 @@
-import Contacts from './pages/Contacts';
+import Contacts from './pages/contacts';
 
 const App = () => {
   return (
