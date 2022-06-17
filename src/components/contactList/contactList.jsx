@@ -17,7 +17,6 @@ const ContactList = ({ contacts }) => {
 
   return (
     <ul>
-      <h1>ContList</h1>
       {visibleFilter.map(({ id, name, phone }) => {
         return <ContactListItem key={id} id={id} name={name} phone={phone} />;
       })}
