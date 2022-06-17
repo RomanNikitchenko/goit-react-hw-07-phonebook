@@ -3,9 +3,9 @@ import {
   useCreateContactMutation,
 } from './redux/phonebook/contactSlice';
 
-import ContactList from './contactList/ContactList';
-import ContactForm from './form/ContactForm';
-import Filter from './filter/Filter';
+import ContactList from './contactList/contactList';
+import ContactForm from './form/contactForm';
+import Filter from './filter/filter';
 
 const App = () => {
   const { data } = useFetchContactsQuery();
