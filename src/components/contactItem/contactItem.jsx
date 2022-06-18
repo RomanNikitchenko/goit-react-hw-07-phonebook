@@ -1,4 +1,5 @@
-import { useDeleteContactMutation } from 'components/redux/phonebook/contactSlice';
+import { useDeleteContactMutation } from 'redux/phonebook/contactSlice';
+import PropTypes from 'prop-types';
 
 const ContactItem = ({ id, name, phone }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
@@ -16,3 +17,9 @@ const ContactItem = ({ id, name, phone }) => {
 };
 
 export default ContactItem;
+
+ContactItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+};

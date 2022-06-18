@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import {
+  useFetchContactsQuery,
+  useCreateContactMutation,
+} from 'redux/phonebook/contactSlice';
 
-const ContactForm = ({ createContact, contacts }) => {
+const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const { data } = useFetchContactsQuery();
+  const [createContact] = useCreateContactMutation();
 
   const addContact = (addName, contacts) => {
     const contactsName = contacts.map(({ name }) => name.toLowerCase());
@@ -36,7 +43,7 @@ const ContactForm = ({ createContact, contacts }) => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    addContact(name, contacts);
+    addContact(name, data);
     setName('');
     setNumber('');
   };

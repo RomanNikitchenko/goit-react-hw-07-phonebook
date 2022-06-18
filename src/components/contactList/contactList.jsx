@@ -1,5 +1,6 @@
 import ContactItem from 'components/contactItem/contactItem';
 import { useSelector } from 'react-redux';
+import { useFetchContactsQuery } from 'redux/phonebook/contactSlice';
 
 const getNormalizedFilter = (filterValue, contacts) => {
   const normalizedFilter = filterValue.toLowerCase();
@@ -11,9 +12,10 @@ const getNormalizedFilter = (filterValue, contacts) => {
   return visibleTodos;
 };
 
-const ContactList = ({ contacts }) => {
+const ContactList = () => {
+  const { data } = useFetchContactsQuery();
   const filterValue = useSelector(state => state.phonebook.filter);
-  const visibleFilter = getNormalizedFilter(filterValue, contacts);
+  const visibleFilter = getNormalizedFilter(filterValue, data);
 
   return (
     <ul>
